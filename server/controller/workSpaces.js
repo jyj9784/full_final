@@ -10,6 +10,10 @@ async function create(req, res) {
     const fullName = `${owner.userEmail}+${name}`;
     const existName = await workSpace.find({ name: fullName });
 
+    if (name === ""){
+      return res.status(400).send({ errorMessage: "값을 채워주세요"})
+    }
+
     if (existName.length) {
       if (existName[0].owner === owner.userEmail)
         return res
