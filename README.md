@@ -1,4 +1,4 @@
-# 💻협업툴 - Backend
+# 💻 TEAM NOTE - Backend
 
 ## 🏠 [Home Page Link](https://www.antsori.com)
 
@@ -10,6 +10,14 @@
 ## 🗂️ 목차
 
 ### 1. [프로젝트 소개](#-프로젝트-소개)
+
+
+실용적이고, 매력적인 UI로 협업에서 받는 스트레스를 줄여 드립니다!
+
+함께 프로젝트를 하는 사람들과 일정을 공유하고, 정리하고, 대화를 나눠보세요!
+
+Share your task ~!
+
 
 ### 2. [팀 구성](#-팀-구성)
 
@@ -117,15 +125,17 @@
 
 <br>
 
-## 🛠 기술스택 ([WHY?](https://spark-stove-6bf.notion.site/cf6de263fec844ba8c989b4c9a6dd32e))
+## 🛠 기술스택 ([WHY?](https://sprout-dress-47a.notion.site/2d490dffed3f486ca5af157a68a64970))
 
 | 기술스택 |        설명         |
 | -------- | :-----------------: |
 | Node.js  | 자바스크립트 런타임 |
 | Express  |    웹 프레임워크    |
-| Jenkins  |      CI/CD 툴       |
+| Git Action  |      CI/CD 툴       |
 | Nginx    |     Proxy 서버      |
 | Docker   |       Docker        |
+| MongoDB  |   NoSQL 비관계형 DB |
+| VsCode   |        소스 코드 편집기            |
 
 <br>
 

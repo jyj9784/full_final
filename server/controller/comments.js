@@ -1,8 +1,7 @@
 const Post = require('../schemas/post');
-const Board = require('../schemas/boards')
+const Board = require('../schemas/boards');
 const postComment = require('../schemas/postComment');
 const boardComment = require('../schemas/boardComment');
-
 
 //code :102 공지 댓글 작성하기
 async function boardCommentUpload(req, res) {
@@ -190,5 +189,5 @@ module.exports = {
   boardCommentEdit,
   postCommentUpload,
   postCommentDelete,
-  postCommentEdit
+  postCommentEdit,
 };

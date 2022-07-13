@@ -6,10 +6,11 @@ const boardComment = require('../schemas/boardComment');
 // code : 101 , 소속 워크스페이스 공지용 , 채팅 X
 async function boardUpload(req, res, next) {
   // 글 작성하기
-  //#swagger.tags= ['TeamNote'];
-  // swagger.summary= '북마크'
-  //swagger.description='북마크추가
+
   try {
+    //#swagger.tags= ['게시글 API'];
+    //#swagger.summary= '게시글 등록 API'
+    //##swagger.description='-'
     const { userName } = res.locals.User;
     const { workSpaceName } = req.params;
     const { title, content } = req.body;
@@ -52,7 +53,7 @@ async function boardUpload(req, res, next) {
 async function boardAllView(req, res, next) {
   try {
     const { workSpaceName } = req.params;
-    const boards = await Board.find({workSpaceName}).sort('-boardId');
+    const boards = await Board.find({ workSpaceName }).sort('-boardId');
     res.send({ boards, message: '공지 조회에 성공 했습니다.' });
   } catch (error) {
     console.log(error);
