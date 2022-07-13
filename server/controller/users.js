@@ -81,7 +81,8 @@ async function emailFirst(req, res) {
     //#swagger.summary= '로그인 이메일 API'
     //#swagger.description='-'
     const { userEmail } = req.body;
-    const userFind = User.findOne({ userEmail });
+    const { userFind } = User.findOne({ userEmail });
+    console.log('userFind: ', userFind);
     if (userFind) {
       res.status(200).send({ email: userEmail, success: true });
     }

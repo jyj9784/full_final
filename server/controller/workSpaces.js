@@ -13,8 +13,8 @@ async function create(req, res) {
     const fullName = `${owner.userEmail}+${name}`;
     const existName = await workSpace.find({ name: fullName });
 
-    if (name === ""){
-      return res.status(400).send({ errorMessage: "값을 채워주세요"})
+    if (name === "") {
+      return res.status(400).send({ errorMessage: "값을 채워주세요" });
     }
 
     if (existName.length) {
@@ -234,11 +234,14 @@ async function roomName(req, res) {
 // router.get("/workSpace/workSpaceList", authMiddleware, workSpaceController.getWorkSpaceList);
 async function getWorkSpaceList(req, res) {
   try {
-    const user = res.locals.User.userEmail;
+    const { userEmail } = res.locals.User;
+    console.log("userEmail: ", userEmail);
     const workSpaceList = await workSpace.find({});
     console.log("workSpaceList: ", workSpaceList);
 
-    const includedList = workSpaceList.filter((Info) => Info.owner === user);
+    const includedList = workSpaceList.filter((Info) =>
+      Info.memberList.filter((member) => member.memberEmail === userEmail)
+    );
     return res.status(200).json({
       includedList,
       ok: true,
@@ -275,5 +278,5 @@ module.exports = {
   workSpaceLeave,
   workSpaceRemove,
   getWorkSpaceList,
-  everyWorkSpace
+  everyWorkSpace,
 };
